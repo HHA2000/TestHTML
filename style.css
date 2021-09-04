@@ -1,34 +1,42 @@
 body{
     background-color: black;
-    color: rgb(117, 36, 4);
+    color: white;
     display: grid;
     place-items: center;
-    height: 100vh;
 }
 
-#header{
-    font-size: 3em;
-    text-align: right;
+h1 {
+    position: relative;
+    width: max-content;
 }
 
-.container{
-    background-color: white;
-    width: 50vh;
-    height: 50vh;
-    padding: 1em;
-    border-radius: 10%;
-    display: flex;
-    flex-direction: column;
-    clip-path: circle(20% at 90% 15%);
-    transition: clip-path .4s ease-in-out;
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    inset: 0;
 }
 
-.container:hover{
-    clip-path: circle(100%);
+h1::before {
+    background-color: black;
+    animation: typing 5s steps(22) forwards infinite;
 }
 
-/* @keyframes spin{
-    100%{
-        transform: rotate(360deg);
+h1::after{
+    background-color: blueviolet;
+    width: 0.1em;
+    animation: typing 5s steps(22) forwards infinite;
+}
+
+@keyframes typing {
+    50% {
+        left: 100%;
     }
+    100% {
+        left: 0;
+    }
+}
+
+/* h1:hover::before{
+    transform: scale(1);
 } */
