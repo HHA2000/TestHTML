@@ -1,6 +1,12 @@
+:root {
+    --bg-color: #000;
+    --ff-color: #1e847f;
+    --secondary-color: #ecc19c;
+}
+
 body{
-    background-color: black;
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--ff-color);
     display: grid;
     place-items: center;
 }
@@ -18,12 +24,12 @@ h1::after {
 }
 
 h1::before {
-    background-color: black;
+    background-color: var(--bg-color);
     animation: typing 5s steps(22) forwards infinite;
 }
 
 h1::after{
-    background-color: blueviolet;
+    background-color: var(--secondary-color);
     width: 0.1em;
     animation: typing 5s steps(22) forwards infinite;
 }
@@ -37,6 +43,28 @@ h1::after{
     }
 }
 
-/* h1:hover::before{
-    transform: scale(1);
+div {
+    color: var(--ff-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+div > p {
+    flex-basis: calc(400px - 100%);
+    flex-grow: 1;
+    padding: 1em;
+    border: 1px solid blueviolet;
+}
+
+/* .rectangle::before {
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    inset: 0;
+    animation: toleft 4s linear infinite;
+}
+
+@keyframes toleft {
+    to { left: 100%;}
 } */
