@@ -1,102 +1,43 @@
 :root {
-    --bg-color: #000;
-    --ff-color: #1e847f;
-    --secondary-color: #ecc19c;
-}
-
-body{
-    background-color: var(--bg-color);
-    color: var(--ff-color);
+    --primary-color: #63CB91;
+    --bg-color: #50B3AE;
+    --ff-color: #fff;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-}
-
-h1 {
-    position: relative;
-    width: max-content;
-}
-
-h1::before,
-h1::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-}
-
-h1::before {
     background-color: var(--bg-color);
-    animation: typing 6s steps(22) forwards infinite;
-}
-
-h1::after{
-    background-color: var(--secondary-color);
-    width: 0.1em;
-    animation: typing 6s steps(22) forwards infinite;
-}
-
-@keyframes typing {
-    50% {
-        left: 100%;
-    }
-    100% {
-        left: 0;
-    }
-}
-
-nav > ul {
-    border: 1px solid blueviolet;
-    display: flex;
-    overflow: hidden;
+    color: var(--ff-color);
     padding: 0.1em;
-    text-align: center;
-    justify-content: center;
+}
+
+header nav ul {
+    display: flex;
+    align-items: baseline;
     list-style-type: none;
+    
 }
 
-@media (max-width: 579px) {
-    nav > ul {
-        flex-direction: column;
-    }
+header nav ul > li {
+    margin: 0.1em 0.5em;
 }
 
-nav  li {
-    margin: 1em;
+header nav ul li:first-child {
+    margin-right: auto;
 }
 
-nav  a {
+header nav ul a {
     text-decoration: none;
     color: var(--ff-color);
 }
 
-nav a:hover {
-    color: var(--secondary-color);
-}
-
-div {
+header button {
+    padding: 0.5em;
+    background-color: var(--primary-color);
     color: var(--ff-color);
+    border: none;
+}
+
+header > div {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+    margin: 5em;
 }
-
-div > p {
-    flex-basis: calc((579px - 100%) * 999);
-    flex-grow: 1;
-    padding: 1em;
-    /* border: 1px solid blueviolet; */
-}
-
-/* .rectangle::before {
-    content: '';
-    background-color: var(--bg-color);
-    position: absolute;
-    inset: 0;
-    animation: toleft 4s linear infinite;
-}
-
-@keyframes toleft {
-    to { left: 100%;}
-} */
