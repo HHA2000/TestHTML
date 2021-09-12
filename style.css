@@ -4,40 +4,126 @@
     --ff-color: #fff;
 }
 
-header {
-    background-color: var(--bg-color);
-    color: var(--ff-color);
-    padding: 0.1em;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header nav ul {
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--bg-color);
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 0.5em 1em;
+}
+
+.navbar-toggle,
+.navbar-toggle-label {
+    position: absolute;
+    top: 1.3em;
+    right: 1em;
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
     list-style-type: none;
-    
 }
 
-header nav ul > li {
-    margin: 0.1em 0.5em;
+.navbar ul > li {
+    margin: auto 0.5em;
 }
 
-header nav ul li:first-child {
-    margin-right: auto;
-}
-
-header nav ul a {
+.navbar a {
     text-decoration: none;
     color: var(--ff-color);
 }
 
-header button {
+@media screen and (max-width: 600px) {
+    .navbar,
+    .navbar-toggle-label {
+        display: block;
+    }
+
+    .navbar-toggle-label span,
+    .navbar-toggle-label span::before,
+    .navbar-toggle-label span::after {
+        display: block;
+        height: 3px;
+        width: 2em;
+        background-color: var(--ff-color);
+        position: relative;
+    }
+
+    .navbar-toggle-label span::before,
+    .navbar-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .navbar-toggle-label span::before {
+        bottom: 7px;
+    }
+
+    .navbar-toggle-label span::after {
+        top: 7px;
+    }
+
+    .navbar ul {
+        display: none;
+        position: absolute;
+        background-color: var(--bg-color);
+        width: 100%;
+        top: 100%;
+        padding: 0.5em;
+    }
+
+    .navbar ul li {
+        margin: 1em;
+    }
+
+    .navbar-toggle:checked ~ ul {
+        display: block;
+    }
+}
+
+.primary-button {
     padding: 0.5em;
     background-color: var(--primary-color);
     color: var(--ff-color);
     border: none;
 }
 
+header {
+    background-color: var(--bg-color);
+    color: var(--ff-color);
+    padding: 0.1em;
+}
+
 header > div {
     display: flex;
     margin: 5em;
+}
+
+header hr {
+    margin: 1em auto;
+}
+
+header h3 {
+    margin: 0.5em auto;
+}
+
+main {
+    height: 200vh;
+}
+
+article {
+    margin: 1em;
 }
